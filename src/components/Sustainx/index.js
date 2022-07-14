@@ -1,11 +1,12 @@
 import './index.scss'
 import Loader from 'react-loaders'
+import { useEffect } from 'react'
 
-const About = () => {
+const Sustainx = () => {
   useEffect(() => {
     setTimeout(() => {
-      return (location.href = 'https://devjoda.github.io/sustainx/')
-    }, 2000)
+      return (window.location.href = 'https://devjoda.github.io/sustainx/')
+    }, 3000)
   }, [])
 
   return (
@@ -21,4 +22,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Sustainx
