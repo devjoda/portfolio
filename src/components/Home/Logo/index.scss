@@ -1,0 +1,25 @@
+.logo-container {
+  z-index: 0;
+  width: 400px;
+  height: 609px;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+  animation: bounceInRight 1.8s 2.5s backwards;
+
+  .solid-logo {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    opacity: 1;
+    z-index: 1;
+  }
+}
