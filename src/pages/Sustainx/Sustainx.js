@@ -1,6 +1,6 @@
-import './index.scss'
+import './Sustainx.scss'
 import Loader from 'react-loaders'
-import { useEffect } from 'react'
+import {useEffect} from 'react'
 
 const Sustainx = () => {
   useEffect(() => {
@@ -22,4 +22,4 @@ const Sustainx = () => {
   )
 }
 
-export default Sustainx
+export {Sustainx}

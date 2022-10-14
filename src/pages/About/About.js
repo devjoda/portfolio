@@ -1,8 +1,15 @@
-import './index.scss'
-import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCss3, faFigma, faGitAlt, faHtml5, faJsSquare, faReact } from '@fortawesome/free-brands-svg-icons'
+import './About.scss'
+import {AnimatedLetters} from '../../components/AnimatedLetters/AnimatedLetters'
+import {useEffect, useState} from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {
+  faCss3,
+  faFigma,
+  faGitAlt,
+  faHtml5,
+  faJsSquare,
+  faReact,
+} from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders'
 
 const About = () => {
@@ -19,11 +26,17 @@ const About = () => {
       <div className='container about-page'>
         <div className='text-zone'>
           <h1>
-            <AnimatedLetters letterClass={letterClass} stringArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']} index={15} />
+            <AnimatedLetters
+              letterClass={letterClass}
+              stringArray={['About me'.split('')]}
+              index={15}
+            />
           </h1>
           <p>
-            I'm an ambitious web developer looking for frontend and full stack opportunities. I build solid and scalable solutions with
-            great user experiences. I have a passion for all things technology and design, from web development to UI/UX.
+            I'm an ambitious web developer looking for frontend and full stack
+            opportunities. I build solid and scalable solutions with great user
+            experiences. I have a passion for all things technology and design,
+            from web development to UI/UX.
           </p>
         </div>
 
@@ -55,4 +68,4 @@ const About = () => {
   )
 }
 
-export default About
+export {About}

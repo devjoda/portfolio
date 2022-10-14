@@ -1,29 +1,13 @@
 import LogoTitle from '../../assets/images/logo-s.svg'
-import { Link } from 'react-router-dom'
-import AnimatedLetters from '../AnimatedLetters'
-import './index.scss'
-import { useEffect, useState } from 'react'
-import Logo from './Logo'
+import {Link} from 'react-router-dom'
+import {AnimatedLetters} from '../../components/AnimatedLetters/AnimatedLetters'
+import './Home.scss'
+import {useEffect, useState} from 'react'
+import {Logo} from '../../components/Logo/Logo'
 import Loader from 'react-loaders'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const nameArray = ['o', 'a', 'c', 'h', 'i', 'm', ',']
-  const jobArray = [
-    'w',
-    'e',
-    'b',
-    ' ',
-    'd',
-    'e',
-    'v',
-    'e',
-    'l',
-    'o',
-    'p',
-    'e',
-    'r',
-  ]
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,8 +17,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="container home-page">
-        <div className="text-zone">
+      <div className='container home-page'>
+        <div className='text-zone'>
           <h1>
             <span className={letterClass}>H</span>
             <span className={`${letterClass} _12`}>i</span>
@@ -42,29 +26,29 @@ const Home = () => {
             <br />
             <span className={`${letterClass} _14`}>I</span>
             <span className={`${letterClass} _15`}>'m</span>
-            <img src={LogoTitle} alt="developer" />
+            <img src={LogoTitle} alt='developer' />
             <AnimatedLetters
               letterClass={letterClass}
-              stringArray={nameArray}
+              stringArray={'oachim'.split('')}
               index={15}
             />
             <br />
             <AnimatedLetters
               letterClass={letterClass}
-              stringArray={jobArray}
+              stringArray={'web developer'.split('')}
               index={20}
             />
           </h1>
           <h2>Looking for frontend and full stack opportunities</h2>
-          <Link to="/work" className="flat-button">
+          <Link to='/work' className='flat-button'>
             View work
           </Link>
         </div>
         <Logo />
       </div>
-      <Loader type="line-scale-pulse-out" color="#e87042" />
+      <Loader type='line-scale-pulse-out' color='#e87042' />
     </>
   )
 }
 
-export default Home
+export {Home}

@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import Loader from 'react-loaders'
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
-import { useRef } from 'react'
+import {MapContainer, TileLayer, Marker} from 'react-leaflet'
+import {useRef} from 'react'
 import emailjs from '@emailjs/browser'
-import AnimatedLetters from '../AnimatedLetters'
-import './index.scss'
+import {AnimatedLetters} from '../../components/AnimatedLetters/AnimatedLetters'
+import './Contact.scss'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -16,7 +16,7 @@ const Contact = () => {
     }, 3000)
   }, [])
 
-  const sendEmail = (e) => {
+  const sendEmail = e => {
     e.preventDefault()
 
     emailjs
@@ -39,53 +39,52 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container contact-page">
-        <div className="text-zone">
+      <div className='container contact-page'>
+        <div className='text-zone'>
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              stringArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+              stringArray={['Contact me'.split('')]}
               index={15}
             />
           </h1>
           <p>Let's build some great stuff!</p>
-          <div className="contact-form">
+          <div className='contact-form'>
             <form ref={form} onSubmit={sendEmail}>
               <ul>
-                <li className="half">
-                  <input type="text" name="name" placeholder="Name" required />
+                <li className='half'>
+                  <input type='text' name='name' placeholder='Name' required />
                 </li>
-                <li className="half">
+                <li className='half'>
                   <input
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
+                    type='email'
+                    name='email'
+                    placeholder='E-mail'
                     required
                   />
                 </li>
                 <li>
                   <input
-                    placeholder="Subject"
-                    type="text"
-                    name="subject"
+                    placeholder='Subject'
+                    type='text'
+                    name='subject'
                     required
                   />
                 </li>
                 <li>
                   <textarea
-                    placeholder="Message"
-                    name="message"
-                    required
-                  ></textarea>
+                    placeholder='Message'
+                    name='message'
+                    required></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="flat-button" value="Send" />
+                  <input type='submit' className='flat-button' value='Send' />
                 </li>
               </ul>
             </form>
           </div>
         </div>
-        <div className="info-map">
+        <div className='info-map'>
           Joachim Danielsen
           <br />
           8700 Horsens
@@ -93,24 +92,23 @@ const Contact = () => {
           Denmark
           <br />
           <br />
-          <a href="mailto:dev.joda@gmail.com">
-            <span className="highlight">@</span>: dev.joda@gmail.com
+          <a href='mailto:dev.joda@gmail.com'>
+            <span className='highlight'>@</span>: dev.joda@gmail.com
           </a>
         </div>
-        <div className="map-wrap">
+        <div className='map-wrap'>
           <MapContainer
             zoomControl={false}
             center={[55.86132, 9.862748]}
-            zoom={6}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            zoom={6}>
+            <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
             <Marker position={[55.86132, 9.862748]}></Marker>
           </MapContainer>
         </div>
       </div>
-      <Loader type="line-scale-pulse-out" color="#e87042" />
+      <Loader type='line-scale-pulse-out' color='#e87042' />
     </>
   )
 }
 
-export default Contact
+export {Contact}
