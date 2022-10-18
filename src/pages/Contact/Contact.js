@@ -1,20 +1,14 @@
-import {useEffect, useState} from 'react'
 import Loader from 'react-loaders'
 import {MapContainer, TileLayer, Marker} from 'react-leaflet'
 import {useRef} from 'react'
 import emailjs from '@emailjs/browser'
 import {AnimatedLetters} from '../../components/AnimatedLetters/AnimatedLetters'
 import './Contact.scss'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faRocket} from '@fortawesome/free-solid-svg-icons'
 
 const Contact = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
-
-  useEffect(() => {
-    setTimeout(() => {
-      return setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
 
   const sendEmail = e => {
     e.preventDefault()
@@ -43,12 +37,15 @@ const Contact = () => {
         <div className='text-zone'>
           <h1>
             <AnimatedLetters
-              letterClass={letterClass}
-              stringArray={['Contact me'.split('')]}
+              stringArray={'Contact me'.split('')}
               index={15}
+              delay={2500}
             />
           </h1>
-          <p>Let's build some great stuff!</p>
+          <div className='text'>
+            <p>Let's make something special </p>
+            <FontAwesomeIcon icon={faRocket} color='#e87042' />
+          </div>
           <div className='contact-form'>
             <form ref={form} onSubmit={sendEmail}>
               <ul>

@@ -1,21 +1,18 @@
+@charset "UTF-8";
+
+@use './static/styles/scss/01_abstracts/index' as *;
+@use './static/styles/scss/02_vendors/index' as *;
+@use './static/styles/scss/03_base/index' as *;
+
 @import 'animate.css';
 @import '~loaders.css/src/animations/line-scale-pulse-out.scss';
-
-@font-face {
-  font-family: 'La Belle Aurore';
-  src: url('./assets/fonts/LaBelleAurore.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
-}
-
-$primary-color: #e87042;
+@import '~sanitize.css';
+@import '~sanitize.css/forms.css';
+@import '~sanitize.css/typography.css';
 
 input,
 textarea {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .loader-hidden {

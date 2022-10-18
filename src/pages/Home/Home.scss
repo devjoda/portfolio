@@ -1,47 +1,68 @@
-@import '../../App.scss';
+@use '../../static/styles/scss/01_abstracts/index.scss' as *;
+@use '../../App.scss';
 
 .home-page {
+  display: flex;
+  justify-content: space-between;
+
   .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY((-50%));
-    width: 40%;
-    max-height: 90%;
+    @include mq(lg) {
+      min-width: 500px;
+    }
+
+    @include mq(xl) {
+      min-width: 600px;
+    }
+
+    @include mq(xxl) {
+      min-width: 700px;
+    }
   }
 
   h1 {
-    color: #fff;
-    font-size: 53px;
-    margin: 0;
+    color: var(--light-1);
+    font-size: clamp(1.9rem, 5vw, 5rem);
     font-family: 'Coolvetica';
     font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
 
     &::before {
+      display: none;
       content: '<h1>';
       font-family: 'La Belle Aurore';
-      color: $primary-color;
+      color: var(--accent-1);
       font-size: 18px;
       position: absolute;
-      margin-top: -40px;
+      margin-left: 3.5rem;
+      margin-top: -1.2rem;
       left: 0;
       opacity: 0.75;
+
+      @include mq(lg) {
+        display: unset;
+      }
     }
 
     &::after {
       content: '<h1/>';
+      display: none;
       font-family: 'La Belle Aurore';
-      color: $primary-color;
+      color: var(--accent-1);
       font-size: 18px;
       position: absolute;
-      margin-top: 40px;
-      margin-left: 20px;
+      margin-top: clamp(1.2rem, 4.5vw, 3.9rem);
+      margin-left: 1.2rem;
       opacity: 0.75;
+
+      @include mq(lg) {
+        display: unset;
+      }
     }
 
     img {
-      width: 36px;
-      margin-left: 20px;
+      width: clamp(1.5rem, 3.8vw, 3.5rem);
+      margin-left: 15px;
       opacity: 0;
       height: auto;
       animation: rotateIn 1.4s linear both;
@@ -49,13 +70,13 @@
     }
   }
 
-  h2 {
-    color: #8d8d8d;
-    margin-top: 20px;
+  p {
+    color: var(--light-2);
     font-weight: 400;
-    font-size: 11px;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 3px;
+    font-size: clamp(0.75rem, 5vw, 0.9rem);
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 1.5px;
     animation: fadeIn 1s 1.8s backwards;
+    margin: 2.5rem 0;
   }
 }

@@ -1,6 +1,14 @@
 import './AnimatedLetters.scss'
+import {useState, useEffect} from 'react'
 
-const AnimatedLetters = ({letterClass, stringArray, index}) => {
+const AnimatedLetters = ({stringArray, index, delay}) => {
+  const [letterClass, setLetterClass] = useState('text-animate')
+
+  useEffect(() => {
+    setTimeout(() => {
+      return setLetterClass('text-animate-hover')
+    }, delay)
+  }, [delay])
   return (
     <span>
       {stringArray.map((char, i) => (
